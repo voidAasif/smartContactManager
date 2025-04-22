@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{normal/base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <section>
+
+        <div th:if="${session.message}" class="alert ml-3 mr-5 text-center" role="alert" th:classappend="${session.message.type}">
+            <p class="text-center" th:text="${session.message.content}"></p> 
+
+            <!-- remove session message using session helper custom component -->
+            <th:block th:text="${@sessionHelper.sessionMessageRemove()}"></th:block>
+        </div>
+
+        <div class="card mr-5 ml-3">
+            <div class="card-body">
+                <h1 class="text-center">Settings</h1>
+
+
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <form action="#" 
+                            enctype="multipart/form-data" 
+                            method="post"
+                            th:action="@{/user/process-settings}"
+                            class="mt-5">
+
+                            <!--  Old Password  -->
+                            <div class="input-group mt-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-plus"></i>
+                                    </div>
+                                </div>
+                                <input type="text" 
+                                    id="oldPassword" 
+                                    name="oldPassword" 
+                                    placeholder="Old Name"
+                                    class="form-control"
+                                    required>
+                            </div>
+
+                            <!-- New Password  -->
+                            <div class="input-group mt-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-plus"></i>
+                                    </div>
+                                </div>
+                                <input type="text" 
+                                    id="newPassword" 
+                                    name="newPassword" 
+                                    placeholder="New Name"
+                                    class="form-control"
+                                    required>
+                            </div>
+
+                            <!--Submit buttons -->
+                            <div class="container text-center mt-2">
+                                <button type="submit" class="btn btn-primary btn-block">Apply</button>
+                            </div>
+                            <!--Reset buttons -->
+                            <div class="container text-center mt-2">
+                                <button type="reset" class="btn btn-warning btn-block">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>

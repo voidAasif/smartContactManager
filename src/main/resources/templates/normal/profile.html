@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{normal/base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <section>
+        <!-- show if contact is not empty -->
+        <div class="card mr-5 ml-3">
+            <div class="card-body">
+                <div class="container text-center">
+                    <span><img th:src="@{${'/uploads/'+user.image}}" style="height: 200px; width: 200px;" class="my-profile-image" src="" alt="profile image" srcset=""></span>
+                </div>
+
+                <h1 class="text-center mt-5" th:text="${#strings.toUpperCase(user.name)}"></h1>
+
+                <div class="container mt-5">
+                    <table class="table text-center">
+        
+                        <thead>
+                          <tr>
+                            <th scope="col">#UID</th>
+                            <th scope="col">UID00<span th:text="${user.userId}"></span></th>
+                          </tr>
+                        </thead>
+          
+                        <tbody>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td th:text="${user.email}"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Role</th>
+                                <td th:text="${user.role}"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Account Active</th>
+                                <td th:text="${user.enabled}"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">About You</th>
+                                <td th:text="${user.about}"></td>
+                            </tr>
+         
+                        </tbody>  
+                    </table>
+                </div>
+            </div>
+        </div>     
+    </section>
+</body>
+</html>
+
+

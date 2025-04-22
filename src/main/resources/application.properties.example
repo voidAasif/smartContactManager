@@ -1,0 +1,44 @@
+spring.application.name=smartContactManager
+
+server.port=8123
+
+#DB;
+spring.datasource.url=jdbc:YOUR-DB-URL
+spring.datasource.username=YOUR-DB-USERNAME
+spring.datasource.password=YOUR-DB-PASSWORD
+
+# Database driver (choose either MySQL or MariaDB)
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+
+# Hibernate JPA settings
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+#file
+spring.servlet.multipart.max-file-size=-1
+spring.servlet.multipart.max-request-size=-1
+
+#mail config
+
+# -------------------------------------
+# SMTP Server Configuration
+# -------------------------------------
+# The mail server host (Gmail SMTP server)
+spring.mail.host=smtp.gmail.com
+# The SMTP server port (587 for TLS, 465 for SSL, 25 for plain)
+spring.mail.port=587
+# Your email address used to send the mail
+spring.mail.username=your_email@gmail.com
+# App-specific password (especially if using Gmail with 2FA)
+spring.mail.password=your_app_password
+
+# -------------------------------------
+# Protocol and Security Settings
+# -------------------------------------
+# Protocol to be used for sending email
+spring.mail.protocol=smtp
+# Enable SMTP authentication
+spring.mail.properties.mail.smtp.auth=true
+# Enable STARTTLS encryption
+spring.mail.properties.mail.smtp.starttls.enable=true
+

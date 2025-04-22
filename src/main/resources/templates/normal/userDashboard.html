@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{normal/base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <section>
+        <!-- show if contact is not empty -->
+        <div class="card mr-5 ml-3">
+            <div class="card-body mt-5">
+                <div class="container text-center">
+                    <span><img th:src="@{/uploads/smartContactManagerLogo.png}" style="height: 200px; width: 200px;" class="my-profile-image" src="" alt="profile image" srcset=""></span>
+                </div>
+                <h1 class="text-center mt-5 text-secondary font-italic font-weight-light">Start adding your contacts on cloud...</h1>
+
+                <a th:href="@{/user/addContact}" class="btn btn-primary btn-block text-uppercase mt-4">Add new Contact</a>
+            </div>
+        </div>     
+    </section>
+</body>
+</html>
+
+
